@@ -1,12 +1,18 @@
 ﻿@page
 @model App0502Aula.Pages.Usuarios.IndexModel
 @{
+    var msg = TempData["Mensagem"] as string;
+    var tipo = TempData["MensagemTipo"] as string ?? "info"; //success ou info ou warning ou danger
 }
 
 <div class="text-center">
     <h1 class="display-4">Cadastro de usuários</h1>
 </div>
 
+@if (!string.IsNullOrEmpty(msg))
+{
+    <div class="alert alert-@tipo mb-3">@msg</div>
+}
 
 @if(Model.Usuarios != null && Model.Usuarios.Count != 0) 
 {

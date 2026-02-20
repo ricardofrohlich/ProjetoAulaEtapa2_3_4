@@ -1,3 +1,4 @@
 2;Maria;321321321;maria@infnet.edu.br
-3;Ricardo;123445343;ricardosma@gmail.com
-4;Rodrigo;2312321;rodrigo@infnet.edu.br
+1;Ricardo;2323242424;ricardosma@gmail.com
+3;Rodrigo;238912098421984;rodrigo@infnet.edu.br
+7;Rodolfo;093843290849320;rodolfo@infnet.edu.br

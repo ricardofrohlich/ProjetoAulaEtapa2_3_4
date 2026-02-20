@@ -23,8 +23,11 @@ namespace App0502Aula.Pages.Usuarios
             }
             else
             {
-                //vou armazenar em um arquivo texto
-                using(var writer = new StreamWriter("usuarios.txt", true))
+                int id = Usuario.Id; //armazenando aqui pra eu nao perder o id que exclui pra mostrar a mensagem que foi excluido
+                string nome = Usuario.Nome; //nome também pra mostrar na mensagem;
+                TempData["Mensagem"] = id + " - " + nome + " cadastrado com sucesso!";
+                TempData["MensagemTipo"] = "success";
+                using (var writer = new StreamWriter("usuarios.txt", true))
                 {
                     writer.WriteLine(Usuario.Id + ";" + Usuario.Nome + ";" + Usuario.Senha + ";" + Usuario.Email);
                     return RedirectToPage("/Usuarios/Index");

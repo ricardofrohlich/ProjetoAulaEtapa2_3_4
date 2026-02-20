@@ -5,11 +5,12 @@
 }
     <h2>@ViewData["Title"]</h2>
 
-    <div asp-validation-summary="All" class="alert alert-warning"></div>
+    
     @if(Model.Usuario is null)
     {
+    <div asp-validation-summary="All" class="alert alert-warning"></div>
     <a asp-page="Index" class="btn btn-secondary">Voltar</a>
-}
+    }
 else
 {
     <div class="alert alert-danger">
