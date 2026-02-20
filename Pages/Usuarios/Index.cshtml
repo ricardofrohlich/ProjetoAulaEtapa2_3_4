@@ -28,7 +28,8 @@
                     <td>@u.Email</td>
                     <td class="text-center"> 
                         <a class="btn btn-outline-info" asp-page="/Usuarios/Detalhar" asp-route-id="@u.Id">Detalhar</a>
-                        <a class="btn btn-outline-info" asp-page="/Usuarios/Editar" asp-route-id="@u.Id">Editar</a>
+                        <a class="btn btn-outline-warning" asp-page="/Usuarios/Editar" asp-route-id="@u.Id">Editar</a>
+                        <a class="btn btn-outline-danger" asp-page="/Usuarios/Excluir" asp-route-id="@u.Id">Excluir</a>
                     </td>
                 </tr>
             }

@@ -1,1 +1,3 @@
-2;fdsfds;sddsffds;efer@vdsdf
+2;Maria;321321321;maria@infnet.edu.br
+3;Ricardo;123445343;ricardosma@gmail.com
+4;Rodrigo;2312321;rodrigo@infnet.edu.br
