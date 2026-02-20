@@ -1,0 +1,26 @@
+﻿@page "{id:int}"
+@model App0502Aula.Pages.Usuarios.ExcluirModel
+@{
+    ViewData["Title"] = "Excluir Usuário";
+}
+    <h2>@ViewData["Title"]</h2>
+
+    <div asp-validation-summary="All" class="alert alert-warning"></div>
+    @if(Model.Usuario is null)
+    {
+    <a asp-page="Index" class="btn btn-secondary">Voltar</a>
+}
+else
+{
+    <div class="alert alert-danger">
+        <strong>Tem certeza que deseja excluir o usuário?</strong><br />
+        <p>Nome: @Model.Usuario.Nome</p>
+        <p>E-mail: @Model.Usuario.Senha</p>
+    </div>
+    <form method="post">
+        <input type="hidden" asp-for="Usuario.Id" />
+        <button type ="submit" class="btn btn-danger">Excluir</button>
+        <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+}
+

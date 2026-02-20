@@ -1,0 +1,26 @@
+﻿@page "{id:int}"
+@model App0502Aula.Pages.Usuarios.EditarModel
+@{
+    ViewData["Title"] = "Editando um usuário";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Usuario.Id"/>
+    <div class="form-group">
+        <label asp-for="Usuario.Nome">Nome</label>
+        <input asp-for="Usuario.Nome" class="form-control" />
+    </div>
+        <div class="form-group">
+        <label asp-for="Usuario.Email">E-mail</label>
+        <input asp-for="Usuario.Email" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Usuario.Senha">Senha</label>
+        <input asp-for="Usuario.Senha" type="password" class="form-control"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+
+</form>

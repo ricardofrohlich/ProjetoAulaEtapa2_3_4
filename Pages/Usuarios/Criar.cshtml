@@ -1,0 +1,36 @@
+﻿@page
+@model App0502Aula.Pages.Usuarios.CriarModel
+@{
+    ViewData["Title"] = "Cadastro de Usuário";
+}
+
+<h2>Cadastrar usuário</h2>
+
+<form method="post">
+    <div>
+        <label asp-for="Usuario.Id">ID:</label>
+        <input asp-for="Usuario.Id" class="form-control" />
+        <span asp-validation-for="Usuario.Id" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Usuario.Nome">Nome:</label>
+        <input asp-for="Usuario.Nome" class="form-control" />
+        <span asp-validation-for="Usuario.Nome" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Usuario.Email">Email:</label>
+        <input asp-for="Usuario.Email" class="form-control" />
+        <span asp-validation-for="Usuario.Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Usuario.Senha">Senha:</label>
+        <input asp-for="Usuario.Senha" type="password" class="form-control" />
+        <span asp-validation-for="Usuario.Senha" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+</form>

@@ -1,0 +1,38 @@
+﻿@page
+@model App0502Aula.Pages.Usuarios.IndexModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cadastro de usuários</h1>
+</div>
+
+
+@if(Model.Usuarios != null && Model.Usuarios.Count != 0) 
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th class="text-center">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in Model.Usuarios)
+            {
+                <tr>
+                    <td>@u.Id</td>
+                    <td>@u.Nome</td>
+                    <td>@u.Email</td>
+                    <td class="text-center"> 
+                        <a class="btn btn-outline-info" asp-page="/Usuarios/Detalhar" asp-route-id="@u.Id">Detalhar</a>
+                        <a class="btn btn-outline-info" asp-page="/Usuarios/Editar" asp-route-id="@u.Id">Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<a asp-page="Criar" class="btn btn-primary">Ir para cadastro</a>
