@@ -23,7 +23,10 @@ namespace App0502Aula.Pages.Usuarios
             {
                 return Page();
             }
-
+            int id = Usuario.Id; //armazenando aqui pra eu nao perder o id que exclui pra mostrar a mensagem que foi excluido
+            string nome = Usuario.Nome; //nome também pra mostrar na mensagem;
+            TempData["Mensagem"] = id + " - " + nome + " editado com sucesso!";
+            TempData["MensagemTipo"] = "success";
             var linhas = System.IO.File.ReadAllLines("usuarios.txt").ToList();
 
             for(int i = 0; i < linhas.Count; i++)

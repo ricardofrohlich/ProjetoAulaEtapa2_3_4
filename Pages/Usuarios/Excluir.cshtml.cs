@@ -24,12 +24,7 @@ namespace App0502Aula.Pages.Usuarios
 
         public IActionResult OnPost()
         {
-            if (Usuario == null)
-            {
-                TempData["Mensagem"] = "Usuário não encontrado";
-                TempData["MensagemTipo"] = "warning";
-                return RedirectToPage("Index");
-            }
+
             var usuarios = CarregarUsuarios();
             var usuarioExistente = usuarios.FirstOrDefault(u => u.Id == Usuario.Id);
             if(usuarioExistente != null)
@@ -37,6 +32,7 @@ namespace App0502Aula.Pages.Usuarios
                 int id = usuarioExistente.Id; //armazenando aqui pra eu nao perder o id que exclui pra mostrar a mensagem que foi excluido
                 string nome = usuarioExistente.Nome; //nome também pra mostrar na mensagem;
                 TempData["Mensagem"] = id + " - " + nome + " excluido com sucesso!";
+                TempData["MensagemTipo"] = "success";
                 usuarios.Remove(usuarioExistente);
 
                 var linhas = new List<string>();
@@ -45,6 +41,11 @@ namespace App0502Aula.Pages.Usuarios
                     linhas.Add(usuario.Id + ";" + usuario.Nome + ";" + usuario.Senha + ";" + usuario.Email);
                 }
                 System.IO.File.WriteAllLines("usuarios.txt", linhas);
+            }
+            else
+            {
+                TempData["Mensagem"] = "Ao excluir o usuário não foi encontrado";
+                TempData["MensagemTipo"] = "danger";
             }
             return RedirectToPage("Index");
 
